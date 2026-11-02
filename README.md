@@ -28,6 +28,10 @@ Open [http://localhost:7070](http://localhost:7070). The list is held in memory 
 - `Dockerfile`: multi-stage image build.
 - `kubernetes/`: ConfigMap, 3-replica Deployment with liveness/readiness probes, and NodePort Service.
 
+## Jenkins CI workflow
+
+The Multibranch Pipeline reads the `Jenkinsfile` from each discovered branch. The pipeline runs the Maven test suite, packages the application, and archives the generated JAR from `target/*.jar` when the build succeeds. The Jenkinsfile also requests source-control polling every two minutes (`pollSCM('H/2 * * * *')`) so branch changes can trigger builds automatically; Jenkins must have the repository and polling configured for the job.
+
 Example Kubernetes scale demonstration:
 
 ```sh
