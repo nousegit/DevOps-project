@@ -1,0 +1,3 @@
+configmap/todo-config unchanged (server dry run)
+deployment.apps/todo-app unchanged (server dry run)
+service/todo-service unchanged (server dry run)

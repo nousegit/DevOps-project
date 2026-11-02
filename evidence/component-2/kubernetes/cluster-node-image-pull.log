@@ -1,0 +1,11 @@
+$ docker pull kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
+docker.io/kindest/node@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5: Pulling from kindest/node
+9f3efb90fca8: Pulling fs layer
+d441570a95cf: Pulling fs layer
+d441570a95cf: Already exists
+d441570a95cf: Pull complete
+9f3efb90fca8: Download complete
+9f3efb90fca8: Pull complete
+Digest: sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
+Status: Downloaded newer image for kindest/node@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
+docker.io/kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5

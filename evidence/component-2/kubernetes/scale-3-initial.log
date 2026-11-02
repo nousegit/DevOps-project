@@ -1,0 +1,18 @@
+$ kubectl get pods -l app=todo-app -o wide
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE                               NOMINATED NODE   READINESS GATES
+todo-app-7646c5bb5f-9ml86   1/1     Running   0          69s   10.244.0.5   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-dx9gb   1/1     Running   0          69s   10.244.0.6   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-v2w7c   1/1     Running   0          69s   10.244.0.7   daymark-assignment-control-plane   <none>           <none>
+$ kubectl get deployment todo-app -o wide
+NAME       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES               SELECTOR
+todo-app   3/3     3            3           69s   todo-app     daymark-todo:1.0.0   app=todo-app
+$ kubectl get svc todo-service -o wide
+NAME           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+todo-service   NodePort   10.96.244.121   <none>        80:30070/TCP   69s   app=todo-app
+$ kubectl get endpointslice -l kubernetes.io/service-name=todo-service -o wide
+NAME                 ADDRESSTYPE   PORTS   ENDPOINTS                          AGE
+todo-service-t5psd   IPv4          7071    10.244.0.6,10.244.0.7,10.244.0.5   69s
+$ kubectl get pods -l app=todo-app -o jsonpath restart counts
+todo-app-7646c5bb5f-9ml86 restarts=0 ready=true
+todo-app-7646c5bb5f-dx9gb restarts=0 ready=true
+todo-app-7646c5bb5f-v2w7c restarts=0 ready=true

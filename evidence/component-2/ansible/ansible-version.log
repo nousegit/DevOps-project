@@ -1,0 +1,10 @@
+$ ansible --version
+ansible [core 2.21.6]
+  config file = None
+  configured module search path = ['/private/tmp/daymark-ansible-home/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /private/tmp/daymark-ansible-venv/lib/python3.14/site-packages/ansible
+  ansible collection location = /private/tmp/daymark-ansible-home/collections:/usr/share/ansible/collections
+  executable location = /private/tmp/daymark-ansible-venv/bin/ansible
+  python version = 3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)] (/private/tmp/daymark-ansible-venv/bin/python)
+  jinja version = 3.1.6
+  pyyaml version = 6.0.3 (with libyaml v0.2.5)

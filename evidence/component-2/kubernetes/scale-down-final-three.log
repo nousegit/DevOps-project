@@ -1,0 +1,11 @@
+$ kubectl get pods -l app=todo-app -o wide
+NAME                        READY   STATUS    RESTARTS   AGE    IP           NODE                               NOMINATED NODE   READINESS GATES
+todo-app-7646c5bb5f-9ml86   1/1     Running   0          102s   10.244.0.5   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-dx9gb   1/1     Running   0          102s   10.244.0.6   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-v2w7c   1/1     Running   0          102s   10.244.0.7   daymark-assignment-control-plane   <none>           <none>
+$ kubectl get deployment todo-app -o jsonpath
+replicas=3 ready=3 available=3
+$ kubectl get endpointslice -l kubernetes.io/service-name=todo-service -o jsonpath
+addresses=10.244.0.6 10.244.0.7 10.244.0.5
+$ curl -sS --fail http://127.0.0.1:18080/health
+{"status":"UP"}

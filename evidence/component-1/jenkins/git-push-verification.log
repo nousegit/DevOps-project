@@ -1,0 +1,20 @@
+$ git show -s --format=fuller HEAD
+commit 864f041c3e818198a4a0c3c5d9ad0369b42bcd60
+Author:     pankaj <pankajsingh25568@gmail.com>
+AuthorDate: Tue Nov 3 00:45:59 2026 +0530
+Commit:     pankaj <pankajsingh25568@gmail.com>
+CommitDate: Tue Nov 3 00:45:59 2026 +0530
+
+    docs: document Jenkins CI workflow
+
+$ git ls-remote origin refs/heads/main
+864f041c3e818198a4a0c3c5d9ad0369b42bcd60	refs/heads/main
+
+$ git status --short --branch
+## main...origin/main
+ M EVIDENCE_CHECKLIST.md
+?? JENKINS_VERIFICATION.md
+?? "evidence/component-1/Screenshot 2026-11-02 at 11.03.34\342\200\257AM.png"
+?? "evidence/component-1/Screenshot 2026-11-02 at 11.05.02\342\200\257AM.png"
+?? evidence/component-1/jenkins/
+?? evidence/component-2/

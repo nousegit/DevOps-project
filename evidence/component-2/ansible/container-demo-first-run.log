@@ -1,0 +1,38 @@
+$ ansible-playbook -i /private/tmp/daymark-ansible-demo.ini ansible/container-demo.yml
+
+PLAY [Demonstrate Daymark configuration on an unprivileged Ubuntu container] ***
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Host 'todo-server' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.
+ok: [todo-server]
+
+TASK [Install Java 17 runtime] *************************************************
+changed: [todo-server]
+
+TASK [Create Daymark service account] ******************************************
+changed: [todo-server]
+
+TASK [Create Daymark application directory] ************************************
+changed: [todo-server]
+
+TASK [Copy runnable Daymark JAR] ***********************************************
+changed: [todo-server]
+
+TASK [Apply pending file-change handlers] **************************************
+
+RUNNING HANDLER [Restart Daymark process] **************************************
+[ERROR]: Task failed: Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chmod: invalid mode: ‘A+user:daymark:rx:allow’
+Try 'chmod --help' for more information.
+}). For information on working around this, see https://docs.ansible.com/ansible-core/2.21/playbook_guide/playbooks_privilege_escalation.html#risks-of-becoming-an-unprivileged-user
+Origin: /Users/pankaj/Documents/DevOps proejct ToDo app/ansible/container-demo.yml:84:7
+
+82
+83   handlers:
+84     - name: Restart Daymark process
+         ^ column 7
+
+fatal: [todo-server]: FAILED! => {"changed": false, "msg": "Task failed: Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chmod: invalid mode: ‘A+user:daymark:rx:allow’\nTry 'chmod --help' for more information.\n}). For information on working around this, see https://docs.ansible.com/ansible-core/2.21/playbook_guide/playbooks_privilege_escalation.html#risks-of-becoming-an-unprivileged-user"}
+
+PLAY RECAP *********************************************************************
+todo-server                : ok=5    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

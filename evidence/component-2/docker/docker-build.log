@@ -1,0 +1,55 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 371B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/maven:3.9.9-eclipse-temurin-17
+#2 DONE 0.4s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre
+#3 DONE 0.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 58B done
+#4 DONE 0.0s
+
+#5 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:17-jre@sha256:4faa9eaf440514dd4f7ef71fecb92526e13679aea039bed5d2fc98e885c60dee
+#5 resolve docker.io/library/eclipse-temurin:17-jre@sha256:4faa9eaf440514dd4f7ef71fecb92526e13679aea039bed5d2fc98e885c60dee done
+#5 DONE 0.0s
+
+#6 [build 1/5] FROM docker.io/library/maven:3.9.9-eclipse-temurin-17@sha256:f58d59b6273e785ac0a4477f6e9b5ba1d7731c75b906c0f7b34076f1851318cc
+#6 resolve docker.io/library/maven:3.9.9-eclipse-temurin-17@sha256:f58d59b6273e785ac0a4477f6e9b5ba1d7731c75b906c0f7b34076f1851318cc done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 687B done
+#7 DONE 0.0s
+
+#8 [build 3/5] COPY pom.xml .
+#8 CACHED
+
+#9 [build 4/5] COPY src ./src
+#9 CACHED
+
+#10 [stage-1 2/3] WORKDIR /app
+#10 CACHED
+
+#11 [build 2/5] WORKDIR /workspace
+#11 CACHED
+
+#12 [build 5/5] RUN mvn -B clean package -DskipTests
+#12 CACHED
+
+#13 [stage-1 3/3] COPY --from=build /workspace/target/todo-app-1.0.0.jar /app/todo-app.jar
+#13 CACHED
+
+#14 exporting to image
+#14 exporting layers done
+#14 exporting manifest sha256:39a69670a14a15dd8e1991893a6ade3ed2ea60790ffdd813829ab3ce8165dc1b done
+#14 exporting config sha256:038f857df6ea4ec396e0a2ae39d4bb4122cdc77d84d4335739f89dc92e57fdca done
+#14 exporting attestation manifest sha256:aca88efe229dc389e8df4d82b0084c15e7903c11eda2e236a0435c91640b328b done
+#14 exporting manifest list sha256:100e3c9bd3d61c56ace22cbb178bccca9b2279d7628ddbf7f196ff14270d42eb done
+#14 naming to docker.io/library/daymark:1.0 done
+#14 unpacking to docker.io/library/daymark:1.0 done
+#14 DONE 0.0s

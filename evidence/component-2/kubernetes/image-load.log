@@ -1,0 +1,4 @@
+$ kind load docker-image daymark-todo:1.0.0 --name daymark-assignment
+Image: "daymark-todo:1.0.0" with ID "sha256:cad675255531f0014e58d14fd99f3e206a2caf2ce43349b45bced27f32e0c5ee" not yet present on node "daymark-assignment-control-plane", loading...
+$ docker image inspect daymark-todo:1.0.0
+Image=[daymark-todo:1.0.0] OS/Arch=linux/arm64 Entrypoint=["java","-jar","/app/todo-app.jar"]

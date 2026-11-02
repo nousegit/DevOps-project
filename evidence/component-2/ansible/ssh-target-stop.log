@@ -1,0 +1,5 @@
+$ docker stop daymark-ansible-ssh-target
+daymark-ansible-ssh-target
+$ docker ps -a --filter name=daymark-ansible-ssh-target
+CONTAINER ID                                                       IMAGE                             COMMAND                                                             CREATED          STATUS                                PORTS     NAMES
+fb5e99c669e9696509e7ae21375520b5285caf91d11b8a9a3c5676e2cc2e9522   daymark-ansible-target:ubuntu24   "/bin/bash -lc 'mkdir -p /run/sshd && exec /usr/sbin/sshd -D -e'"   43 seconds ago   Exited (137) Less than a second ago             daymark-ansible-ssh-target

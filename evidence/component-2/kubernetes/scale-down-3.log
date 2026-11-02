@@ -1,0 +1,28 @@
+$ kubectl scale deployment/todo-app --replicas=3
+deployment.apps/todo-app scaled
+$ kubectl rollout status deployment/todo-app --timeout=180s
+deployment "todo-app" successfully rolled out
+$ kubectl get pods -l app=todo-app -o wide
+NAME                        READY   STATUS        RESTARTS   AGE   IP           NODE                               NOMINATED NODE   READINESS GATES
+todo-app-7646c5bb5f-9ml86   1/1     Running       0          94s   10.244.0.5   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-dx9gb   1/1     Running       0          94s   10.244.0.6   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-r9js7   1/1     Terminating   0          18s   10.244.0.8   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-sczx5   1/1     Terminating   0          18s   10.244.0.9   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-v2w7c   1/1     Running       0          94s   10.244.0.7   daymark-assignment-control-plane   <none>           <none>
+$ kubectl get deployment todo-app -o wide
+NAME       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES               SELECTOR
+todo-app   3/3     3            3           94s   todo-app     daymark-todo:1.0.0   app=todo-app
+$ kubectl get endpoints todo-service
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME           ENDPOINTS                                         AGE
+todo-service   10.244.0.5:7071,10.244.0.6:7071,10.244.0.7:7071   94s
+$ curl -i --fail http://127.0.0.1:18080/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   3485      0 --:--:-- --:--:-- --:--:--  3750
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 20:05:20 GMT
+Content-Type: application/json
+Content-Length: 15
+
+{"status":"UP"}

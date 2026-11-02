@@ -1,0 +1,32 @@
+$ kubectl get nodes
+NAME                               STATUS   ROLES           AGE     VERSION
+daymark-assignment-control-plane   Ready    control-plane   3m36s   v1.37.0
+$ kubectl get deployment,pods,svc
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES               SELECTOR
+deployment.apps/todo-app   3/3     3            3           2m53s   todo-app     daymark-todo:1.0.0   app=todo-app
+
+NAME                            READY   STATUS    RESTARTS   AGE     IP           NODE                               NOMINATED NODE   READINESS GATES
+pod/todo-app-7646c5bb5f-9ml86   1/1     Running   0          2m53s   10.244.0.5   daymark-assignment-control-plane   <none>           <none>
+pod/todo-app-7646c5bb5f-dx9gb   1/1     Running   0          2m53s   10.244.0.6   daymark-assignment-control-plane   <none>           <none>
+pod/todo-app-7646c5bb5f-v2w7c   1/1     Running   0          2m53s   10.244.0.7   daymark-assignment-control-plane   <none>           <none>
+
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+service/kubernetes     ClusterIP   10.96.0.1       <none>        443/TCP        3m34s   <none>
+service/todo-service   NodePort    10.96.244.121   <none>        80:30070/TCP   2m53s   app=todo-app
+$ kubectl get endpointslice -l kubernetes.io/service-name=todo-service -o wide
+NAME                 ADDRESSTYPE   PORTS   ENDPOINTS                          AGE
+todo-service-t5psd   IPv4          7071    10.244.0.6,10.244.0.7,10.244.0.5   2m53s
+$ curl -i --fail http://127.0.0.1:18080/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   2803      0 --:--:-- --:--:-- --:--:--  3000
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 20:06:39 GMT
+Content-Type: application/json
+Content-Length: 15
+
+{"status":"UP"}$ docker ps (cluster and existing services)
+CONTAINER ID   IMAGE                             STATUS          PORTS                                              NAMES
+3f5c9ece1e4a   kindest/node:v1.37.0              Up 3 minutes    127.0.0.1:60055->6443/tcp                          daymark-assignment-control-plane
+0473b45cc60f   daymark-ansible-target:ubuntu24   Up 20 minutes   127.0.0.1:7070->7070/tcp, 127.0.0.1:2223->22/tcp   daymark-ansible-container-demo
+f4864ecee48c   docker/welcome-to-docker:latest   Up 14 hours     0.0.0.0:8088->80/tcp, [::]:8088->80/tcp            welcome-to-docker

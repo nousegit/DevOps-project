@@ -1,0 +1,8 @@
+$ Download official Kind v0.33.0 Darwin arm64 binary and checksum into /private/tmp
+$ file /private/tmp/daymark-kubernetes-tools/kind
+/private/tmp/daymark-kubernetes-tools/kind: Mach-O 64-bit executable arm64
+$ sha256 of downloaded Kind binary
+0c8c7dbe5e23594a198b786c4bc13dacc101fa6196b0cb0b23a1ca44e61f4b4f  /private/tmp/daymark-kubernetes-tools/kind
+$ request official Kind v0.33.0 checksum with timeout
+Checksum downloaded
+0c8c7dbe5e23594a198b786c4bc13dacc101fa6196b0cb0b23a1ca44e61f4b4f  kind-darwin-arm64

@@ -1,0 +1,6 @@
+$ docker inspect daymark-ansible-target --format state/exit
+State=exited Exit=255 OOMKilled=false Error=
+$ docker ps -a --filter name=daymark-ansible-target
+CONTAINER ID                                                       IMAGE                             COMMAND        CREATED          STATUS                        PORTS     NAMES
+589ec008e24a2dbe765cd89b8d77dc5aea936ae0284e51461a347a37b4fce2a7   daymark-ansible-target:ubuntu24   "/sbin/init"   59 seconds ago   Exited (255) 58 seconds ago             daymark-ansible-target
+$ docker logs --timestamps daymark-ansible-target

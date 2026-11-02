@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: todo-config
 data:
-  PORT: "7070"
+  PORT: "7071"

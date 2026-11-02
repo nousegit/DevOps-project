@@ -1,0 +1,10 @@
+$ docker rm daymark-ansible-ssh-target
+daymark-ansible-ssh-target
+$ docker run Ubuntu SSH target, loopback ports 2223 and 7070
+0473b45cc60fd6ab72395744e4cb8cf265fe6ee4127d7aadbdf3f89f9f9bfe3d
+lstat /private/tmp/daymark-ansible-demo_authorized_keys: no such file or directory
+$ docker cp /private/tmp/daymark_ansible_demo_authorized_keys target:/tmp/authorized_keys
+$ install authorized key with account ownership and 0600 mode
+$ docker ps target status
+CONTAINER ID   IMAGE                             STATUS         PORTS                                              NAMES
+0473b45cc60f   daymark-ansible-target:ubuntu24   Up 6 seconds   127.0.0.1:7070->7070/tcp, 127.0.0.1:2223->22/tcp   daymark-ansible-container-demo

@@ -1,0 +1,100 @@
+---
+- name: Demonstrate Daymark configuration on an unprivileged Ubuntu container
+  hosts: todo
+  become: true
+  vars:
+    app_user: daymark
+    app_port: 7070
+    app_jar_source: "{{ playbook_dir }}/../target/todo-app-1.0.0.jar"
+    app_jar_destination: /opt/daymark/todo-app.jar
+    app_log_file: /opt/daymark/daymark.log
+    app_pid_file: /opt/daymark/daymark.pid
+  tasks:
+    - name: Install Java 17 runtime
+      ansible.builtin.apt:
+        name:
+          - openjdk-17-jre-headless
+          - acl
+        state: present
+        update_cache: true
+
+    - name: Create Daymark service account
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        system: true
+        shell: /usr/sbin/nologin
+
+    - name: Create Daymark application directory
+      ansible.builtin.file:
+        path: /opt/daymark
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: '0755'
+
+    - name: Copy runnable Daymark JAR
+      ansible.builtin.copy:
+        src: "{{ app_jar_source }}"
+        dest: "{{ app_jar_destination }}"
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: '0644'
+      notify: Restart Daymark process
+
+    - name: Apply pending file-change handlers
+      ansible.builtin.meta: flush_handlers
+
+    - name: Check Daymark process PID
+      ansible.builtin.shell:
+        cmd: "test -s {{ app_pid_file }} && kill -0 \"$(cat {{ app_pid_file }})\""
+        chdir: /opt/daymark
+        executable: /bin/bash
+      become_user: "{{ app_user }}"
+      register: daymark_process
+      changed_when: false
+      failed_when: false
+
+    - name: Start Daymark when it is not running
+      ansible.builtin.shell:
+        cmd: |
+          nohup /usr/bin/java -jar {{ app_jar_destination }} >> {{ app_log_file }} 2>&1 < /dev/null &
+          echo $! > {{ app_pid_file }}
+        chdir: /opt/daymark
+        executable: /bin/bash
+      become_user: "{{ app_user }}"
+      environment:
+        PORT: "{{ app_port }}"
+      when: daymark_process.rc != 0
+
+    - name: Wait for Daymark application port
+      ansible.builtin.wait_for:
+        host: 127.0.0.1
+        port: "{{ app_port }}"
+        state: started
+        timeout: 30
+      changed_when: false
+
+    - name: Verify Daymark health endpoint
+      ansible.builtin.uri:
+        url: "http://127.0.0.1:{{ app_port }}/health"
+        method: GET
+        status_code: 200
+        return_content: true
+      register: daymark_health
+      changed_when: false
+
+  handlers:
+    - name: Restart Daymark process
+      ansible.builtin.shell:
+        cmd: |
+          if test -s {{ app_pid_file }}; then
+            old_pid=$(cat {{ app_pid_file }});
+            kill "$old_pid" 2>/dev/null || true;
+          fi
+          nohup /usr/bin/java -jar {{ app_jar_destination }} >> {{ app_log_file }} 2>&1 < /dev/null &
+          echo $! > {{ app_pid_file }}
+        chdir: /opt/daymark
+        executable: /bin/bash
+      become_user: "{{ app_user }}"
+      environment:
+        PORT: "{{ app_port }}"

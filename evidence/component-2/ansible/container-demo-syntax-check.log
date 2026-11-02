@@ -1,0 +1,3 @@
+$ ansible-playbook -i /private/tmp/daymark-ansible-demo.ini ansible/container-demo.yml --syntax-check
+
+playbook: ansible/container-demo.yml

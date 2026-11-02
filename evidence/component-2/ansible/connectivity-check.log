@@ -1,0 +1,9 @@
+$ ANSIBLE_HOME=/private/tmp/daymark-ansible-home ANSIBLE_LOCAL_TEMP=/private/tmp/daymark-ansible-local ansible -i /private/tmp/daymark-ansible-connectivity.ini todo -m ansible.builtin.ping
+[WARNING]: Host 'todo-server' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.
+todo-server | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
