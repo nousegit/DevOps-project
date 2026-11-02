@@ -1,0 +1,20 @@
+$ kubectl get svc todo-service
+NAME           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+todo-service   NodePort   10.96.244.121   <none>        80:30070/TCP   56s   app=todo-app
+$ kubectl get endpoints todo-service
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME           ENDPOINTS                                         AGE
+todo-service   10.244.0.5:7071,10.244.0.6:7071,10.244.0.7:7071   56s
+$ curl -i --fail http://127.0.0.1:18080/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   1665      0 --:--:-- --:--:-- --:--:--  1875
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 20:04:42 GMT
+Content-Type: application/json
+Content-Length: 15
+
+{"status":"UP"}$ curl -sS -o /dev/null -w "homepage HTTP %{http_code}, content-type %{content_type}" http://127.0.0.1:18080/
+homepage HTTP 200, content-type text/html
+$ curl -sS --fail http://127.0.0.1:18080/api/todos
+[{"id":1,"title":"Sketch the project plan","completed":true},{"id":2,"title":"Build the first version","completed":false},{"id":3,"title":"Ship it with confidence","completed":false}]

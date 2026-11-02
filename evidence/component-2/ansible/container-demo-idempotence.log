@@ -1,0 +1,37 @@
+$ ansible-playbook -i /private/tmp/daymark-ansible-demo.ini ansible/container-demo.yml
+
+PLAY [Demonstrate Daymark configuration on an unprivileged Ubuntu container] ***
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Host 'todo-server' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.
+ok: [todo-server]
+
+TASK [Install Java 17 runtime] *************************************************
+ok: [todo-server]
+
+TASK [Create Daymark service account] ******************************************
+ok: [todo-server]
+
+TASK [Create Daymark application directory] ************************************
+ok: [todo-server]
+
+TASK [Copy runnable Daymark JAR] ***********************************************
+ok: [todo-server]
+
+TASK [Apply pending file-change handlers] **************************************
+
+TASK [Check Daymark process PID] ***********************************************
+ok: [todo-server]
+
+TASK [Start Daymark when it is not running] ************************************
+skipping: [todo-server]
+
+TASK [Wait for Daymark application port] ***************************************
+ok: [todo-server]
+
+TASK [Verify Daymark health endpoint] ******************************************
+ok: [todo-server]
+
+PLAY RECAP *********************************************************************
+todo-server                : ok=8    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+

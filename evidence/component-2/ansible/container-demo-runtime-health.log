@@ -1,0 +1,19 @@
+$ docker exec daymark-ansible-container-demo java -version
+openjdk version "17.0.20.1" 2026-08-18
+OpenJDK Runtime Environment (build 17.0.20.1+1-1-24.04-Ubuntu)
+OpenJDK 64-Bit Server VM (build 17.0.20.1+1-1-24.04-Ubuntu, mixed mode, sharing)
+$ docker exec daymark-ansible-container-demo ls -l /opt/daymark/todo-app.jar
+-rw-r--r-- 1 daymark daymark 15143454 Nov  2 19:49 /opt/daymark/todo-app.jar
+$ check Daymark process using PID file
+    PID USER     COMMAND         COMMAND
+   4969 daymark  java            /usr/bin/java -jar /opt/daymark/todo-app.jar
+$ curl -i --fail http://127.0.0.1:7070/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0   4810      0 --:--:-- --:--:-- --:--:--  5000
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 19:49:56 GMT
+Content-Type: application/json
+Content-Length: 15
+
+{"status":"UP"}

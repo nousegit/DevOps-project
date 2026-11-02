@@ -1,0 +1,3 @@
+$ ansible-playbook -i ansible/inventory.ini ansible/site.yml --syntax-check
+
+playbook: ansible/site.yml

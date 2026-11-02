@@ -1,0 +1,27 @@
+$ kubectl apply -f kubernetes/configmap.yaml
+configmap/todo-config created
+$ kubectl apply -f kubernetes/deployment.yaml
+deployment.apps/todo-app created
+$ kubectl apply -f kubernetes/service.yaml
+service/todo-service created
+$ kubectl rollout status deployment/todo-app --timeout=180s
+Waiting for deployment "todo-app" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "todo-app" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "todo-app" rollout to finish: 2 of 3 updated replicas are available...
+deployment "todo-app" successfully rolled out
+$ kubectl get pods -l app=todo-app -o wide
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE                               NOMINATED NODE   READINESS GATES
+todo-app-7646c5bb5f-9ml86   1/1     Running   0          13s   10.244.0.5   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-dx9gb   1/1     Running   0          13s   10.244.0.6   daymark-assignment-control-plane   <none>           <none>
+todo-app-7646c5bb5f-v2w7c   1/1     Running   0          13s   10.244.0.7   daymark-assignment-control-plane   <none>           <none>
+$ kubectl get deployment,service,configmap
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/todo-app   3/3     3            3           13s
+
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/kubernetes     ClusterIP   10.96.0.1       <none>        443/TCP        54s
+service/todo-service   NodePort    10.96.244.121   <none>        80:30070/TCP   13s
+
+NAME                         DATA   AGE
+configmap/kube-root-ca.crt   1      46s
+configmap/todo-config        1      13s

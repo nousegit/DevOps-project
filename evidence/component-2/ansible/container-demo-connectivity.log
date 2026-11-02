@@ -1,0 +1,5 @@
+$ ansible -i /private/tmp/daymark-ansible-demo.ini todo -m ansible.builtin.ping
+[WARNING]: Unable to parse /private/tmp/daymark-ansible-demo.ini as an inventory source
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+[WARNING]: Could not match supplied host pattern, ignoring: todo

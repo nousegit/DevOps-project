@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE                             STATUS                  PORTS                    NAMES
+fb5e99c669e9   daymark-ansible-target:ubuntu24   Up Less than a second   127.0.0.1:2223->22/tcp   daymark-ansible-ssh-target

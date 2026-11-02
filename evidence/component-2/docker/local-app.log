@@ -1,0 +1,34 @@
+11:19:03.260 [main] INFO  io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=/public, location=CLASSPATH, precompressMaxSize=-1, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=null, mimeTypes={}, roles=[]). File system location: '[jar:file:///Users/pankaj/Documents/DevOps%20proejct%20ToDo%20app/target/todo-app-1.0.0.jar!/public/, jar:file:///Users/pankaj/Documents/DevOps%20proejct%20ToDo%20app/target/todo-app-1.0.0.jar!/public/]'
+11:19:03.312 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+11:19:03.314 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 25.0.2+10-LTS
+11:19:03.324 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+11:19:03.324 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@5e3d57c7{STOPPING}[12.1.14,sto=0]
+Exception in thread "main" io.javalin.util.JavalinBindException: Port already in use. Make sure no other process is using port 7070 and try again.
+	at io.javalin.jetty.JettyServer.start(JettyServer.kt:103)
+	at io.javalin.Javalin.start(Javalin.java:115)
+	at com.todo.Main.main(Main.java:18)
+Caused by: java.io.IOException: Failed to bind to 0.0.0.0/0.0.0.0:7070
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:349)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:313)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:617)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:613)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:92)
+	at io.javalin.jetty.JettyServer.start(JettyServer.kt:95)
+	... 2 more
+Caused by: java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:522)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:335)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:297)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:344)
+	... 17 more

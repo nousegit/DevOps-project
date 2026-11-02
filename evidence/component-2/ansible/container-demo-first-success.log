@@ -1,0 +1,37 @@
+$ ansible-playbook -i /private/tmp/daymark-ansible-demo.ini ansible/container-demo.yml
+
+PLAY [Demonstrate Daymark configuration on an unprivileged Ubuntu container] ***
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Host 'todo-server' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.
+ok: [todo-server]
+
+TASK [Install Java 17 runtime] *************************************************
+changed: [todo-server]
+
+TASK [Create Daymark service account] ******************************************
+ok: [todo-server]
+
+TASK [Create Daymark application directory] ************************************
+ok: [todo-server]
+
+TASK [Copy runnable Daymark JAR] ***********************************************
+changed: [todo-server]
+
+TASK [Apply pending file-change handlers] **************************************
+
+RUNNING HANDLER [Restart Daymark process] **************************************
+[WARNING]: Module remote_tmp /home/daymark/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+[ERROR]: Task failed: Module failed: The command exited with a non-zero return code.
+Origin: /Users/pankaj/Documents/DevOps proejct ToDo app/ansible/container-demo.yml:86:7
+
+84
+85   handlers:
+86     - name: Restart Daymark process
+         ^ column 7
+
+fatal: [todo-server]: FAILED! => {"changed": true, "cmd": "if test -s /opt/daymark/daymark.pid; then\n  old_pid=$(cat /opt/daymark/daymark.pid);\n  kill \"$old_pid\" 2>/dev/null || true;\nfi nohup /usr/bin/java -jar /opt/daymark/todo-app.jar >> /opt/daymark/daymark.log 2>&1 < /dev/null & echo $! > /opt/daymark/daymark.pid", "delta": "0:00:00.001116", "end": "2026-11-02 19:48:04.036571", "msg": "The command exited with a non-zero return code.", "rc": 2, "start": "2026-11-02 19:48:04.035455", "stderr": "/bin/bash: -c: line 4: syntax error near unexpected token `nohup'\n/bin/bash: -c: line 4: `fi nohup /usr/bin/java -jar /opt/daymark/todo-app.jar >> /opt/daymark/daymark.log 2>&1 < /dev/null & echo $! > /opt/daymark/daymark.pid'", "stderr_lines": ["/bin/bash: -c: line 4: syntax error near unexpected token `nohup'", "/bin/bash: -c: line 4: `fi nohup /usr/bin/java -jar /opt/daymark/todo-app.jar >> /opt/daymark/daymark.log 2>&1 < /dev/null & echo $! > /opt/daymark/daymark.pid'"], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *********************************************************************
+todo-server                : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

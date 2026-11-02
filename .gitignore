@@ -5,3 +5,10 @@ dependency-reduced-pom.xml
 .vscode/
 *.iml
 .DS_Store
+.env
+.env.*
+!.env.example
+.kube/
+*.kubeconfig
+*.pem
+*.key

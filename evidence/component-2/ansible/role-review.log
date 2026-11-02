@@ -1,0 +1,76 @@
+$ nl -ba ansible/site.yml
+     1	---
+     2	- name: Install and deploy the Todo application
+     3	  hosts: todo
+     4	  become: true
+     5	  vars:
+     6	    app_user: todo
+     7	    app_port: 7070
+     8	    app_jar_source: "{{ playbook_dir }}/../target/todo-app-1.0.0.jar"
+     9	    app_jar_destination: /opt/todo/todo-app.jar
+    10	  roles:
+    11	    - todo_app
+$ nl -ba ansible/roles/todo_app/tasks/main.yml
+     1	---
+     2	- name: Install Java runtime
+     3	  ansible.builtin.package:
+     4	    name: openjdk-17-jre-headless
+     5	    state: present
+     6	
+     7	- name: Create application account
+     8	  ansible.builtin.user:
+     9	    name: "{{ app_user }}"
+    10	    system: true
+    11	    shell: /usr/sbin/nologin
+    12	
+    13	- name: Create application directory
+    14	  ansible.builtin.file:
+    15	    path: /opt/todo
+    16	    state: directory
+    17	    owner: "{{ app_user }}"
+    18	    group: "{{ app_user }}"
+    19	    mode: '0755'
+    20	
+    21	- name: Copy application jar
+    22	  ansible.builtin.copy:
+    23	    src: "{{ app_jar_source }}"
+    24	    dest: "{{ app_jar_destination }}"
+    25	    owner: "{{ app_user }}"
+    26	    group: "{{ app_user }}"
+    27	    mode: '0644'
+    28	  notify: Restart todo app
+    29	
+    30	- name: Install systemd service
+    31	  ansible.builtin.template:
+    32	    src: todo-app.service.j2
+    33	    dest: /etc/systemd/system/todo-app.service
+    34	    mode: '0644'
+    35	  notify: Restart todo app
+    36	
+    37	- name: Ensure Todo app is enabled and running
+    38	  ansible.builtin.systemd:
+    39	    name: todo-app
+    40	    enabled: true
+    41	    state: started
+    42	    daemon_reload: true
+$ nl -ba ansible/roles/todo_app/handlers/main.yml
+     1	---
+     2	- name: Restart todo app
+     3	  ansible.builtin.systemd:
+     4	    name: todo-app
+     5	    state: restarted
+     6	    daemon_reload: true
+$ nl -ba ansible/roles/todo_app/templates/todo-app.service.j2
+     1	[Unit]
+     2	Description=Daymark Todo application
+     3	After=network.target
+     4	
+     5	[Service]
+     6	User={{ app_user }}
+     7	Environment=PORT={{ app_port }}
+     8	ExecStart=/usr/bin/java -jar {{ app_jar_destination }}
+     9	Restart=always
+    10	RestartSec=5
+    11	
+    12	[Install]
+    13	WantedBy=multi-user.target

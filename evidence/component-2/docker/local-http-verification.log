@@ -1,0 +1,48 @@
+$ java -jar target/todo-app-1.0.0.jar (background for HTTP verification)
+$ curl -i http://127.0.0.1:7070/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    15  100    15    0     0     65      0 --:--:-- --:--:-- --:--:--    65
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 05:49:05 GMT
+Content-Type: application/json
+Content-Length: 15
+
+{"status":"UP"}$ curl -s -o /dev/null -w "%{http_code} %{content_type}
+" http://127.0.0.1:7070/
+200 text/html
+$ curl -i http://127.0.0.1:7070/api/todos
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   183  100   183    0     0  29926      0 --:--:-- --:--:-- --:--:-- 30500
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 05:49:05 GMT
+Content-Type: application/json
+Content-Length: 183
+
+[{"id":1,"title":"Sketch the project plan","completed":true},{"id":2,"title":"Build the first version","completed":false},{"id":3,"title":"Ship it with confidence","completed":false}]$ curl -i -X POST -H "Content-Type: application/json" -d {title:Container-check} http://127.0.0.1:7070/api/todos
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    79  100    52  100    27   3721   1932 --:--:-- --:--:-- --:--:--  6076
+HTTP/1.1 201 Created
+Date: Mon, 02 Nov 2026 05:49:05 GMT
+Content-Type: application/json
+Content-Length: 52
+
+{"id":4,"title":"Container-check","completed":false}$ curl -i -X PATCH -H "Content-Type: application/json" -d {completed:true} http://127.0.0.1:7070/api/todos/4
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    69  100    51  100    18   9822   3466 --:--:-- --:--:-- --:--:-- 13800
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 05:49:05 GMT
+Content-Type: application/json
+Content-Length: 51
+
+{"id":4,"title":"Container-check","completed":true}$ curl -i -X DELETE http://127.0.0.1:7070/api/todos/4
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/1.1 204 No Content
+Date: Mon, 02 Nov 2026 05:49:05 GMT
+Content-Type: text/plain
+

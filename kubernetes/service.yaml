@@ -9,5 +9,5 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 7070
+      targetPort: 7071
       nodePort: 30070

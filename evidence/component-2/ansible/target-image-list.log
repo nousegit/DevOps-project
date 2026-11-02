@@ -1,0 +1,3 @@
+$ docker images daymark-ansible-target
+IMAGE                             ID             DISK USAGE   CONTENT SIZE   EXTRA
+daymark-ansible-target:ubuntu24   ebd923fb4c45        245MB         52.8MB   U    

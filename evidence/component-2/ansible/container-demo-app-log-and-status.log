@@ -1,0 +1,38 @@
+$ docker exec daymark-ansible-container-demo cat /opt/daymark/daymark.log
+Error occurred during initialization of VM
+java.lang.Error: Properties init: Could not determine current working directory.
+	at jdk.internal.util.SystemProps$Raw.platformProperties(java.base@17.0.20.1/Native Method)
+	at jdk.internal.util.SystemProps$Raw.<init>(java.base@17.0.20.1/SystemProps.java:234)
+	at jdk.internal.util.SystemProps.initProperties(java.base@17.0.20.1/SystemProps.java:54)
+	at java.lang.System.initPhase1(java.base@17.0.20.1/System.java:2106)
+
+Error occurred during initialization of VM
+java.lang.Error: Properties init: Could not determine current working directory.
+	at jdk.internal.util.SystemProps$Raw.platformProperties(java.base@17.0.20.1/Native Method)
+	at jdk.internal.util.SystemProps$Raw.<init>(java.base@17.0.20.1/SystemProps.java:234)
+	at jdk.internal.util.SystemProps.initProperties(java.base@17.0.20.1/SystemProps.java:54)
+	at java.lang.System.initPhase1(java.base@17.0.20.1/System.java:2106)
+
+19:49:35.144 [main] INFO  io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=/public, location=CLASSPATH, precompressMaxSize=-1, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=null, mimeTypes={}, roles=[]). File system location: '[jar:file:///opt/daymark/todo-app.jar!/public/, jar:file:///opt/daymark/todo-app.jar!/public/]'
+19:49:35.196 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+19:49:35.197 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 17.0.20.1+1-1-24.04-Ubuntu
+19:49:35.222 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+19:49:35.225 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@6ad3381f{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@53dbe163{STARTED}}
+19:49:35.228 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@6ad3381f{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@53dbe163{STARTED}}
+19:49:35.232 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@7fd4f940{HTTP/1.1, (http/1.1)}{0.0.0.0:7070}
+19:49:35.234 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@63f8276e{STARTING}[12.1.14,sto=0] @37ms
+19:49:35.234 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+19:49:35.234 [main] INFO  io.javalin.Javalin - Javalin started in 61ms \o/
+19:49:35.236 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7070/
+19:49:35.241 [main] INFO  io.javalin.Javalin - You are running Javalin 7.2.4 (released October 25, 2026).
+$ docker ps --filter name=daymark-ansible-container-demo
+CONTAINER ID   IMAGE                             STATUS         PORTS                                              NAMES
+0473b45cc60f   daymark-ansible-target:ubuntu24   Up 4 minutes   127.0.0.1:7070->7070/tcp, 127.0.0.1:2223->22/tcp   daymark-ansible-container-demo
