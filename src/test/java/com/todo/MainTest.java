@@ -41,6 +41,13 @@ class MainTest {
         assertTrue(response.body().contains("Make room for"));
     }
 
+    @Test void browserScriptUpdatesCompletedTaskCounter() throws Exception {
+        var response = request("GET", "/app.js", null);
+        assertEquals(200, response.statusCode());
+        assertTrue(response.body().contains("#done-stat"));
+        assertTrue(response.body().contains("textContent = done"));
+    }
+
     @Test void createsListsCompletesAndDeletesTask() throws Exception {
         var created = request("POST", "/api/todos", "{\"title\":\"Write tests\"}");
         assertEquals(201, created.statusCode());
