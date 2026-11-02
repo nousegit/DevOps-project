@@ -1,0 +1,15 @@
+$ curl -i http://127.0.0.1:7070/health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to 127.0.0.1 port 7070 after 0 ms: Couldn't connect to server
+
+$ curl -i http://127.0.0.1:7070/api/todos
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to 127.0.0.1 port 7070 after 0 ms: Couldn't connect to server
+
+$ curl -s -o /dev/null -w "%{http_code} %{content_type}
+" http://127.0.0.1:7070/
+000 

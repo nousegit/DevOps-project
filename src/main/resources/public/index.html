@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2"><title>Daymark — your tasks, in focus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark"><i></i><i></i><i></i></span><span>daymark<span class="brand-dot">.</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav><a class="nav-item active" href="#"><span class="nav-icon">▦</span> My tasks <span class="nav-count" id="nav-count">0</span></a><a class="nav-item" href="#today"><span class="nav-icon">◷</span> Today</a><a class="nav-item" href="#completed"><span class="nav-icon">✓</span> Completed</a></nav>
+      <div class="sidebar-bottom"><div class="tip-card"><span class="tip-spark">✳</span><strong>Small steps add up.</strong><p>Keep showing up. The rest follows.</p></div><div class="profile"><div class="avatar">P</div><div><strong>Your workspace</strong><span>Personal plan</span></div><span class="more">···</span></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="crumb">Workspace <span>/</span> <b>My tasks</b></div><div class="top-actions"><span class="date" id="today-date"></span><button class="icon-button" aria-label="Notifications">♧</button><div class="avatar small">P</div></div></header>
+      <section class="content">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR PERSONAL SPACE</div>
+        <div class="title-row"><div><h1>Make room for<br><em>what matters.</em></h1><p class="subtitle">A little progress each day adds up to big results.</p></div><div class="progress-card"><div class="progress-ring" id="progress-ring"><span id="progress-value">0%</span></div><div><strong>Daily progress</strong><span id="progress-copy">Let's get started</span></div></div></div>
+        <div class="stats"><div class="stat"><span class="stat-icon lilac">◷</span><div><strong id="open-stat">0</strong><span>Tasks to do</span></div></div><div class="stat"><span class="stat-icon mint">✓</span><div><strong id="done-stat">0</strong><span>Completed</span></div></div><div class="stat"><span class="stat-icon peach">✳</span><div><strong id="total-stat">0</strong><span>Total tasks</span></div></div></div>
+        <div class="task-heading"><div><h2>Your tasks <span class="task-total" id="task-total">0</span></h2><p>One thing at a time. You've got this.</p></div><div class="filters" role="tablist"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="active">To do</button><button class="filter" data-filter="completed">Done</button></div></div>
+        <form class="add-form" id="add-form"><span class="add-plus">＋</span><input id="new-title" type="text" maxlength="120" placeholder="Add a task…" aria-label="New task" required><button type="submit">Add task <span>↗</span></button></form>
+        <div class="task-list" id="task-list" aria-live="polite"></div>
+        <div class="footer-note"><span>✦</span> Progress, not perfection. Keep going.</div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

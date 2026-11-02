@@ -1,0 +1,289 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.todo:todo-app >--------------------------
+[INFO] Building todo-app 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 24324 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ todo-app ---
+[INFO] Deleting /Users/pankaj/Documents/DevOps proejct ToDo app/target
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ todo-app ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ todo-app ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ todo-app ---
+[INFO] skip non existing resourceDirectory /Users/pankaj/Documents/DevOps proejct ToDo app/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ todo-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ todo-app ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.todo.MainTest
+10:03:43.024 [main] INFO  io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=/public, location=CLASSPATH, precompressMaxSize=-1, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=null, mimeTypes={}, roles=[]). File system location: 'file:///Users/pankaj/Documents/DevOps%20proejct%20ToDo%20app/target/classes/public/'
+10:03:43.060 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:03:43.062 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 27.0.1.0.3
+10:03:43.090 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+10:03:43.092 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@1e53135d{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@7674a051{STARTED}}
+10:03:43.095 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@1e53135d{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@7674a051{STARTED}}
+10:03:43.098 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@5aa360ea{HTTP/1.1, (http/1.1)}{0.0.0.0:54037}
+10:03:43.101 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@5a12c728{STARTING}[12.1.14,sto=0] @41ms
+10:03:43.102 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+10:03:43.102 [main] INFO  io.javalin.Javalin - Javalin started in 61ms \o/
+10:03:43.103 [main] INFO  io.javalin.Javalin - Listening on http://localhost:54037/
+10:03:43.107 [main] INFO  io.javalin.Javalin - You are running Javalin 7.2.4 (released October 25, 2026).
+10:03:43.231 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+10:03:43.231 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@5a12c728{STOPPING}[12.1.14,sto=0]
+10:03:43.234 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@5aa360ea{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+10:03:43.235 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@1e53135d{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@7674a051{STOPPED}}
+10:03:43.235 [main] INFO  io.javalin.Javalin - Javalin has stopped
+10:03:43.238 [main] INFO  io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=/public, location=CLASSPATH, precompressMaxSize=-1, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=null, mimeTypes={}, roles=[]). File system location: 'file:///Users/pankaj/Documents/DevOps%20proejct%20ToDo%20app/target/classes/public/'
+10:03:43.240 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:03:43.240 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 27.0.1.0.3
+10:03:43.242 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+10:03:43.242 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@11841b15{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@73877e19{STARTED}}
+10:03:43.242 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@11841b15{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@73877e19{STARTED}}
+10:03:43.243 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@7b208b45{HTTP/1.1, (http/1.1)}{0.0.0.0:54039}
+10:03:43.243 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@5bfc257{STARTING}[12.1.14,sto=0] @2ms
+10:03:43.243 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+10:03:43.243 [main] INFO  io.javalin.Javalin - Javalin started in 3ms \o/
+10:03:43.243 [main] INFO  io.javalin.Javalin - Listening on http://localhost:54039/
+10:03:43.243 [main] INFO  io.javalin.Javalin - You are running Javalin 7.2.4 (released October 25, 2026).
+10:03:43.438 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+10:03:43.438 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@5bfc257{STOPPING}[12.1.14,sto=0]
+10:03:43.438 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@7b208b45{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+10:03:43.439 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@11841b15{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@73877e19{STOPPED}}
+10:03:43.439 [main] INFO  io.javalin.Javalin - Javalin has stopped
+10:03:43.440 [main] INFO  io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=/public, location=CLASSPATH, precompressMaxSize=-1, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=null, mimeTypes={}, roles=[]). File system location: 'file:///Users/pankaj/Documents/DevOps%20proejct%20ToDo%20app/target/classes/public/'
+10:03:43.441 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:03:43.442 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 27.0.1.0.3
+10:03:43.442 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+10:03:43.443 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@24a298a6{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@982bb90{STARTED}}
+10:03:43.443 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@24a298a6{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@982bb90{STARTED}}
+10:03:43.443 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@509fb07e{HTTP/1.1, (http/1.1)}{0.0.0.0:54041}
+10:03:43.443 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@27f74733{STARTING}[12.1.14,sto=0] @1ms
+10:03:43.443 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+10:03:43.443 [main] INFO  io.javalin.Javalin - Javalin started in 2ms \o/
+10:03:43.443 [main] INFO  io.javalin.Javalin - Listening on http://localhost:54041/
+10:03:43.443 [main] INFO  io.javalin.Javalin - You are running Javalin 7.2.4 (released October 25, 2026).
+10:03:43.461 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+10:03:43.461 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@27f74733{STOPPING}[12.1.14,sto=0]
+10:03:43.461 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@509fb07e{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+10:03:43.461 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@24a298a6{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@982bb90{STOPPED}}
+10:03:43.462 [main] INFO  io.javalin.Javalin - Javalin has stopped
+10:03:43.463 [main] INFO  io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=/public, location=CLASSPATH, precompressMaxSize=-1, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=null, mimeTypes={}, roles=[]). File system location: 'file:///Users/pankaj/Documents/DevOps%20proejct%20ToDo%20app/target/classes/public/'
+10:03:43.465 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:03:43.465 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 27.0.1.0.3
+10:03:43.466 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+10:03:43.466 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@6f952d6c{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5965844d{STARTED}}
+10:03:43.466 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@6f952d6c{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5965844d{STARTED}}
+10:03:43.466 [main] INFO  o.e.jetty.server.AbstractConnector - Started oejs.ServerConnector@6d4a65c6{HTTP/1.1, (http/1.1)}{0.0.0.0:54043}
+10:03:43.466 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@aa004a0{STARTING}[12.1.14,sto=0] @1ms
+10:03:43.467 [main] INFO  io.javalin.Javalin - 
+       __                  ___          _____
+      / /___ __   ______ _/ (_)___     /__  /
+ __  / / __ `/ | / / __ `/ / / __ \      / /
+/ /_/ / /_/ /| |/ / /_/ / / / / / /     / /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/     /_/
+
+       https://javalin.io/documentation
+
+10:03:43.467 [main] INFO  io.javalin.Javalin - Javalin started in 3ms \o/
+10:03:43.467 [main] INFO  io.javalin.Javalin - Listening on http://localhost:54043/
+10:03:43.467 [main] INFO  io.javalin.Javalin - You are running Javalin 7.2.4 (released October 25, 2026).
+10:03:43.483 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+10:03:43.483 [main] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@aa004a0{STOPPING}[12.1.14,sto=0]
+10:03:43.484 [main] INFO  o.e.jetty.server.AbstractConnector - Stopped oejs.ServerConnector@6d4a65c6{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+10:03:43.484 [main] INFO  o.e.j.e.s.ServletContextHandler - Stopped oeje10s.ServletContextHandler@6f952d6c{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@5965844d{STOPPED}}
+10:03:43.484 [main] INFO  io.javalin.Javalin - Javalin has stopped
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.656 s -- in com.todo.MainTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ todo-app ---
+[INFO] Building jar: /Users/pankaj/Documents/DevOps proejct ToDo app/target/todo-app-1.0.0.jar
+[INFO] 
+[INFO] --- shade:3.6.0:shade (default) @ todo-app ---
+[INFO] Including io.javalin:javalin-bundle:jar:7.2.4 in the shaded jar.
+[INFO] Including io.javalin:javalin:jar:7.2.4 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:2.0.20 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-server:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-http:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-util:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-io:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee10:jetty-ee10-servlet:jar:12.1.14 in the shaded jar.
+[INFO] Including jakarta.servlet:jakarta.servlet-api:jar:6.0.0 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-security:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-session:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee10.websocket:jetty-ee10-websocket-jetty-server:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee10:jetty-ee10-annotations:jar:12.1.14 in the shaded jar.
+[INFO] Including jakarta.annotation:jakarta.annotation-api:jar:2.1.1 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-annotations:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee10:jetty-ee10-plus:jar:12.1.14 in the shaded jar.
+[INFO] Including jakarta.enterprise:jakarta.enterprise.cdi-api:jar:4.0.1 in the shaded jar.
+[INFO] Including jakarta.enterprise:jakarta.enterprise.lang-model:jar:4.0.1 in the shaded jar.
+[INFO] Including jakarta.inject:jakarta.inject-api:jar:2.0.1 in the shaded jar.
+[INFO] Including jakarta.interceptor:jakarta.interceptor-api:jar:2.1.0 in the shaded jar.
+[INFO] Including jakarta.transaction:jakarta.transaction-api:jar:2.0.1 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-jndi:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-plus:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee10:jetty-ee10-webapp:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty:jetty-xml:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee:jetty-ee-webapp:jar:12.1.14 in the shaded jar.
+[INFO] Including org.ow2.asm:asm:jar:9.10.1 in the shaded jar.
+[INFO] Including org.ow2.asm:asm-commons:jar:9.10.1 in the shaded jar.
+[INFO] Including org.ow2.asm:asm-tree:jar:9.10.1 in the shaded jar.
+[INFO] Including org.eclipse.jetty.ee10.websocket:jetty-ee10-websocket-servlet:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.websocket:jetty-websocket-core-server:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.websocket:jetty-websocket-jetty-api:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.websocket:jetty-websocket-jetty-common:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.websocket:jetty-websocket-core-common:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.websocket:jetty-websocket-jetty-server:jar:12.1.14 in the shaded jar.
+[INFO] Including io.javalin:javalin-context-mock:jar:7.2.4 in the shaded jar.
+[INFO] Including org.eclipse.jetty.toolchain:jetty-jakarta-servlet-api:jar:5.0.2 in the shaded jar.
+[INFO] Including io.javalin:javalin-testtools:jar:7.2.4 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.22.4 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.22 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.22.4 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-kotlin:jar:2.22.4 in the shaded jar.
+[INFO] Including org.jetbrains.kotlin:kotlin-reflect:jar:2.1.21 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.22.4 in the shaded jar.
+[INFO] Including com.aayushatharva.brotli4j:brotli4j:jar:1.23.0 in the shaded jar.
+[INFO] Including com.aayushatharva.brotli4j:service:jar:1.23.0 in the shaded jar.
+[INFO] Including com.aayushatharva.brotli4j:native-osx-aarch64:jar:1.23.0 in the shaded jar.
+[INFO] Including org.eclipse.jetty.http2:jetty-http2-server:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.http2:jetty-http2-common:jar:12.1.14 in the shaded jar.
+[INFO] Including org.eclipse.jetty.http2:jetty-http2-hpack:jar:12.1.14 in the shaded jar.
+[INFO] Including ch.qos.logback:logback-classic:jar:1.6.5 in the shaded jar.
+[INFO] Including ch.qos.logback:logback-core:jar:1.6.5 in the shaded jar.
+[INFO] Including org.jetbrains.kotlin:kotlin-stdlib:jar:2.2.20 in the shaded jar.
+[INFO] Including org.jetbrains:annotations:jar:13.0 in the shaded jar.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] jetty-http-12.1.14.jar, jetty-http2-hpack-12.1.14.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/services/org.eclipse.jetty.http.HttpFieldPreEncoder
+[WARNING] annotations-13.0.jar, asm-9.10.1.jar, asm-commons-9.10.1.jar, asm-tree-9.10.1.jar, brotli4j-1.23.0.jar, jackson-annotations-2.22.jar, jackson-core-2.22.4.jar, jackson-databind-2.22.4.jar, jackson-datatype-jsr310-2.22.4.jar, jackson-module-kotlin-2.22.4.jar, jakarta.annotation-api-2.1.1.jar, jakarta.enterprise.cdi-api-4.0.1.jar, jakarta.enterprise.lang-model-4.0.1.jar, jakarta.inject-api-2.0.1.jar, jakarta.interceptor-api-2.1.0.jar, jakarta.servlet-api-6.0.0.jar, jakarta.transaction-api-2.0.1.jar, javalin-7.2.4.jar, javalin-bundle-7.2.4.jar, javalin-context-mock-7.2.4.jar, javalin-testtools-7.2.4.jar, jetty-annotations-12.1.14.jar, jetty-ee-webapp-12.1.14.jar, jetty-ee10-annotations-12.1.14.jar, jetty-ee10-plus-12.1.14.jar, jetty-ee10-servlet-12.1.14.jar, jetty-ee10-webapp-12.1.14.jar, jetty-ee10-websocket-jetty-server-12.1.14.jar, jetty-ee10-websocket-servlet-12.1.14.jar, jetty-http-12.1.14.jar, jetty-http2-common-12.1.14.jar, jetty-http2-hpack-12.1.14.jar, jetty-http2-server-12.1.14.jar, jetty-io-12.1.14.jar, jetty-jakarta-servlet-api-5.0.2.jar, jetty-jndi-12.1.14.jar, jetty-plus-12.1.14.jar, jetty-security-12.1.14.jar, jetty-server-12.1.14.jar, jetty-session-12.1.14.jar, jetty-util-12.1.14.jar, jetty-websocket-core-common-12.1.14.jar, jetty-websocket-core-server-12.1.14.jar, jetty-websocket-jetty-api-12.1.14.jar, jetty-websocket-jetty-common-12.1.14.jar, jetty-websocket-jetty-server-12.1.14.jar, jetty-xml-12.1.14.jar, kotlin-reflect-2.1.21.jar, kotlin-stdlib-2.2.20.jar, logback-classic-1.6.5.jar, logback-core-1.6.5.jar, native-osx-aarch64-1.23.0.jar, service-1.23.0.jar, slf4j-api-2.0.20.jar, todo-app-1.0.0.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/MANIFEST.MF
+[WARNING] jackson-annotations-2.22.jar, jackson-core-2.22.4.jar, jackson-databind-2.22.4.jar, jackson-datatype-jsr310-2.22.4.jar, jackson-module-kotlin-2.22.4.jar, javalin-7.2.4.jar, javalin-bundle-7.2.4.jar, javalin-context-mock-7.2.4.jar, javalin-testtools-7.2.4.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/LICENSE
+[WARNING] brotli4j-1.23.0.jar, jackson-core-2.22.4.jar, jackson-databind-2.22.4.jar, jackson-datatype-jsr310-2.22.4.jar, jackson-module-kotlin-2.22.4.jar, kotlin-reflect-2.1.21.jar, kotlin-stdlib-2.2.20.jar, native-osx-aarch64-1.23.0.jar, service-1.23.0.jar, slf4j-api-2.0.20.jar define 1 overlapping classes: 
+[WARNING]   - META-INF.versions.9.module-info
+[WARNING] jakarta.servlet-api-6.0.0.jar, jetty-jakarta-servlet-api-5.0.2.jar define 135 overlapping classes and resources: 
+[WARNING]   - jakarta.servlet.AsyncContext
+[WARNING]   - jakarta.servlet.AsyncEvent
+[WARNING]   - jakarta.servlet.AsyncListener
+[WARNING]   - jakarta.servlet.DispatcherType
+[WARNING]   - jakarta.servlet.Filter
+[WARNING]   - jakarta.servlet.FilterChain
+[WARNING]   - jakarta.servlet.FilterConfig
+[WARNING]   - jakarta.servlet.FilterRegistration
+[WARNING]   - jakarta.servlet.FilterRegistration$Dynamic
+[WARNING]   - jakarta.servlet.GenericFilter
+[WARNING]   - 125 more...
+[WARNING] jackson-datatype-jsr310-2.22.4.jar, jackson-module-kotlin-2.22.4.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/services/com.fasterxml.jackson.databind.Module
+[WARNING] jakarta.annotation-api-2.1.1.jar, jakarta.enterprise.cdi-api-4.0.1.jar, jakarta.enterprise.lang-model-4.0.1.jar, jakarta.inject-api-2.0.1.jar, jakarta.interceptor-api-2.1.0.jar, jakarta.transaction-api-2.0.1.jar, jetty-jakarta-servlet-api-5.0.2.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/NOTICE.md
+[WARNING] jakarta.enterprise.cdi-api-4.0.1.jar, jakarta.enterprise.lang-model-4.0.1.jar, jakarta.inject-api-2.0.1.jar, slf4j-api-2.0.20.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/LICENSE.txt
+[WARNING] jackson-annotations-2.22.jar, jackson-core-2.22.4.jar, jackson-databind-2.22.4.jar, jackson-datatype-jsr310-2.22.4.jar, jackson-module-kotlin-2.22.4.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/NOTICE
+[WARNING] jetty-ee10-annotations-12.1.14.jar, jetty-ee10-plus-12.1.14.jar, jetty-ee10-webapp-12.1.14.jar, jetty-ee10-websocket-jetty-server-12.1.14.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/services/org.eclipse.jetty.ee10.webapp.Configuration
+[WARNING] jetty-ee10-websocket-jetty-server-12.1.14.jar, logback-classic-1.6.5.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/services/jakarta.servlet.ServletContainerInitializer
+[WARNING] jakarta.annotation-api-2.1.1.jar, jakarta.interceptor-api-2.1.0.jar, jakarta.transaction-api-2.0.1.jar, jetty-jakarta-servlet-api-5.0.2.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/LICENSE.md
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /Users/pankaj/Documents/DevOps proejct ToDo app/target/todo-app-1.0.0.jar with /Users/pankaj/Documents/DevOps proejct ToDo app/target/todo-app-1.0.0-shaded.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.635 s
+[INFO] Finished at: 2026-11-02T10:03:44+05:30
+[INFO] ------------------------------------------------------------------------

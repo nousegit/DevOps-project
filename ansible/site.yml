@@ -1,0 +1,11 @@
+---
+- name: Install and deploy the Todo application
+  hosts: todo
+  become: true
+  vars:
+    app_user: todo
+    app_port: 7070
+    app_jar_source: "{{ playbook_dir }}/../target/todo-app-1.0.0.jar"
+    app_jar_destination: /opt/todo/todo-app.jar
+  roles:
+    - todo_app

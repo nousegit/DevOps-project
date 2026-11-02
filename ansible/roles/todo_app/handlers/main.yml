@@ -1,0 +1,6 @@
+---
+- name: Restart todo app
+  ansible.builtin.systemd:
+    name: todo-app
+    state: restarted
+    daemon_reload: true
