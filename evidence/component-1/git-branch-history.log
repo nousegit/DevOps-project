@@ -1,0 +1,18 @@
+$ git status --short --branch
+## feature/daymark-improvement...origin/feature/daymark-improvement
+?? evidence/component-1/git-branch-history.log
+
+$ git branch -avv
+* feature/daymark-improvement                42e08b0 [origin/feature/daymark-improvement] feat: cover completed task counter
+  main                                       cc44591 [origin/main] Initial setup : maven , ansible
+  remotes/origin/DayMark                     cc44591 Initial setup : maven , ansible
+  remotes/origin/HEAD                        -> origin/main
+  remotes/origin/feature/daymark-improvement 42e08b0 feat: cover completed task counter
+  remotes/origin/main                        cc44591 Initial setup : maven , ansible
+
+$ git log --graph --oneline --decorate --all -5
+* 42e08b0 (HEAD -> feature/daymark-improvement, origin/feature/daymark-improvement) feat: cover completed task counter
+* cc44591 (origin/main, origin/HEAD, origin/DayMark, main) Initial setup : maven , ansible
+
+$ git ls-remote --heads origin feature/daymark-improvement
+42e08b084990f875e80e3c054b641292df8cc1c7	refs/heads/feature/daymark-improvement
